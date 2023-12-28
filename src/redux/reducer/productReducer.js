@@ -20,15 +20,7 @@ export const productSlice =createSlice({
         builder.addCase(add.fulfilled, (state, action) => {
             state.list.push(action.payload);
         })
-        // builder.addCase(updateForm.fulfilled, (state, action) => {
-        //     state.productEdit = action.payload;
-        // })
         builder.addCase(update.fulfilled, (state, action) => {
-            // for (let i = 0; i < state.list.length; i++) {
-            //     if (state.list[i].id === action.payload){
-            //         state.list[i] = action.payload;
-            //     }
-            // }
             state.list[state.list.indexOf(action.payload)] = action.payload;
         })
         builder.addCase(getProductById.fulfilled,(state, {payload}) => {

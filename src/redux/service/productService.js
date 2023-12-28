@@ -17,20 +17,10 @@ export const add = createAsyncThunk(
     }
 )
 
-// export const updateForm = createAsyncThunk(
-//     "product/editForm",
-//     async (id) => {
-//         let res = await axios.get("http://localhost:3000/products" + id);
-//         return res.data;
-//     }
-// )
-
 export const update = createAsyncThunk(
     "product/edit",
     async (productEdit) => {
-        // let res =
            return await axios.put("http://localhost:3000/products/" + productEdit.id, productEdit);
-        // return res.data;
     }
 )
 
