@@ -17,7 +17,7 @@ export default function DetailProduct() {
             <h1>Detail Product</h1>
             <p>Title: {product.title}</p>
             <p>Description: {product.description}</p>
-            <p><button onClick={()=> navigate("/products")}>Back</button></p>
+            <p><button className="btn btn-primary ml-3" onClick={()=> navigate("/products")}>Back</button></p>
         </>
     )
 
