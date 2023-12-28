@@ -29,7 +29,7 @@ export const update = createAsyncThunk(
     "product/edit",
     async (productEdit) => {
         // let res =
-           return await axios.put("http://localhost:3000/products" + productEdit.id, productEdit);
+           return await axios.put("http://localhost:3000/products/" + productEdit.id, productEdit);
         // return res.data;
     }
 )
