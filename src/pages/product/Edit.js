@@ -1,7 +1,7 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getProductById, update, updateForm} from "../../redux/service/productService";
+import {getProductById, update} from "../../redux/service/productService";
 import {Field, Form, Formik} from "formik";
 
 export default function Edit() {

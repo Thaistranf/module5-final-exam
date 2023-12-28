@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {add, getAll, getProductById, removeProduct, update, updateForm} from "../service/productService";
+import {add, getAll, getProductById, removeProduct, update} from "../service/productService";
 
 const initialState = {
     list: [],
