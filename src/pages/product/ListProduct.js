@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getAll} from "../../redux/service/productService";
+import {getAll, removeProduct} from "../../redux/service/productService";
 import {Link} from "react-router-dom";
 
 export default function ListProduct() {
@@ -11,6 +11,14 @@ export default function ListProduct() {
     useEffect(() => {
         dispatch(getAll());
     }, []);
+
+    const deleteProduct = (productId) => {
+        const check = window.confirm('Are you sure you want to delete');
+        if (check)
+        {dispatch(removeProduct(productId));
+        }
+    }
+
     return (
         <>
             <table className="table table-striped">
@@ -33,7 +41,7 @@ export default function ListProduct() {
                             <td>{item.price}</td>
                             <td>{item.description}</td>
                             <td className="btn btn-primary">< Link to={"/products/edit/" + item.id} style={{textDecoration:"none", color: "white"}} >Edit</Link> </td>
-                            {/*<td onClick={() => handleDelete(item.id)} className="btn btn-danger ml-3" >Delete</td>*/}
+                            <td onClick={() => deleteProduct(item.id)} className="btn btn-danger ml-3" >Delete</td>
                         </tr>
                     )
                 })}

@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {add, getAll, getProductById, update, updateForm} from "../service/productService";
+import {add, getAll, getProductById, removeProduct, update, updateForm} from "../service/productService";
 
 const initialState = {
     list: [],
@@ -33,6 +33,9 @@ export const productSlice =createSlice({
         })
         builder.addCase(getProductById.fulfilled,(state, {payload}) => {
             state.product =  payload.data;
+        })
+        builder.addCase(removeProduct.fulfilled, (state, {payload}) => {
+            state.list.splice(state.list.indexOf(payload));
         })
     },
 })
