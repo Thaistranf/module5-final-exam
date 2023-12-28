@@ -44,6 +44,7 @@ export default function Edit() {
                             </div>
 
                             <button type="submit" className="btn btn-primary ml-3">Save</button>
+                            <button className="btn btn-primary ml-3" onClick={()=> navigate("/products")}>Back</button>
                         </Form>
                     </Formik>
 

@@ -37,7 +37,7 @@ export default function ListProduct() {
                     return(
                         <tr key={index}>
                             <th scope="row">{item.id}</th>
-                            <td><Link to={"/view/" + item.id}>{item.title}</Link></td>
+                            <td><Link to={"/products/view/" + item.id}>{item.title}</Link></td>
                             <td>{item.price}</td>
                             <td>{item.description}</td>
                             <td className="btn btn-primary">< Link to={"/products/edit/" + item.id} style={{textDecoration:"none", color: "white"}} >Edit</Link> </td>
